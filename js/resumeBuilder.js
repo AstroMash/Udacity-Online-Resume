@@ -112,7 +112,6 @@ const education = {
         }
     ],
     "display": function() {
-        console.log(education.schools);
         for(var i = 0; i < education.schools.length; i++) {
             $('#education').append(HTMLschoolStart);
     
@@ -132,6 +131,26 @@ const education = {
                 $(".education-entry:last").append(formattedMajor);
             }
         }
+        
+        if(education.onlineCourses.length > 0) {
+            // Add Online Classes header
+            $('#education').append(HTMLonlineClasses);
+
+            for(var i = 0; i < education.onlineCourses.length; i++) {
+                $('#education').append(HTMLschoolStart);
+        
+                var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+                var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+                var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+                var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+        
+                $('.education-entry:last').append(formattedTitle + formattedSchool);
+                $('.education-entry:last').append(formattedDates);
+                $('.education-entry:last').append(formattedURL);
+    
+            }
+        }
+        
     }
 };
 
