@@ -15,7 +15,7 @@ const bio = {
     "biopic": "images/me.jpg",
     "welcomeMessage": "Hi, I'm Matt Shultz. I'm a part-time developer and full-time solver. I love building solutions for real-world problems. I have professional experience in web design, graphic design, network/server architecture, and project management. I've challenged myself to become a proficient, full-time JavaScript developer by December 2018.",
     "skills": [
-        "IT", "JS", "PHP"
+        "Network Infrastructure", "Strategic Planning", "Web/Graphic Design", "Front-end Web Development"
     ],
     "display": function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -76,6 +76,10 @@ const work = {
     "display": function() {
         for(var i = 0; i < work.jobs.length; i++) {
             $('#workExperience').append(HTMLworkStart);
+
+            if(i != 0) {
+                $('.work-entry:last').append('<hr>');
+            }
     
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);

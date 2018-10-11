@@ -24,11 +24,16 @@ h6 {
   padding: 0 5%;
 }
 
+.project-entry img {
+  max-width: 400px;
+}
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #FFB600;
   line-height: 48px;
   display: inline;
+  text-shadow: 1px 2px 0px #734a00;
 }
 
 h2 {
@@ -59,6 +64,18 @@ h4,
 h5 {
   padding: 10px 5%;
 
+}
+
+hr {
+  height:1px; 
+  border:none; 
+  color:#ccc; 
+  background-color:#ccc; 
+  margin: 25px 0;
+}
+
+#workExperience {
+  padding: 30px 0 40px 0;
 }
 
 
@@ -95,26 +112,30 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #fff;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #FFB600;
   display: none;
+  text-shadow: 1px 1px 0px #734a00;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #FFB600;
 }
 
 .orange-text {
-  color: #f5ae23;
+  font-weight: bold;
+  color: #FFB600;
+  text-shadow: 1px 1px 0px #734a00;
 }
 
 .white-text {
   font-weight: bold;
   color: #fff;
+  text-shadow: 1px 1px 0px #4e4e4e;
 }
 
 .gray {
@@ -129,7 +150,9 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #17a8dc;
+  background-image: url(https://popshift.net/public_assets/images/blue_vignette.jpg);
+  background-size: auto 100%;
 }
 
 .flex-box {
@@ -158,13 +181,16 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
   width: 200px;
   display: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 10px solid white;
 }
 
 img {
-  padding: 10px;
+  margin: 10px;
 }
 
 span {
@@ -173,6 +199,11 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#lets-connect h2 {
+  color: #fff;
+  text-shadow: 1px 2px 0px #4e4e4e;
 }
 
 /* Media queries to handle various device widths */
