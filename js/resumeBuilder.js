@@ -1,7 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
 const bio = {
     "name": "Matt Shultz",
     "role": "Web Developer",
@@ -163,9 +159,20 @@ const projects = {
         {
             "title": "Memory Game",
             "dates": "Apr/May 2018",
-            "description": "This is a simple card-matching game created for the Udacity Front-End Web Developer Nanodegree Program.",
+            "description": "Memory Game is a simple card-matching game created for the Udacity Front-End Web Developer Nanodegree Program.",
             "images": [
-                "images/projects/memory.png"
+                "images/projects/memory.jpg",
+                "images/projects/memory_win.jpg",
+                "images/projects/memory.gif"
+            ]
+        },
+        {
+            "title": "Classic Arcade",
+            "dates": "Jul/Aug 2018",
+            "description": "Classic Arcade is a Frogger-style clone created for the Udacity Front-End Web Developer Nanodegree Program.",
+            "images": [
+                "images/projects/arcade.jpg",
+                "images/projects/arcade.gif"
             ]
         }
     ],
@@ -191,11 +198,6 @@ const projects = {
         }
     }
 };
-
-
-
-
-
 
 bio.display();
 
