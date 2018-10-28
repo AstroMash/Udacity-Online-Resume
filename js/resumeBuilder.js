@@ -164,7 +164,8 @@ const projects = {
                 "images/projects/memory.jpg",
                 "images/projects/memory_win.jpg",
                 "images/projects/memory.gif"
-            ]
+            ],
+            "demo": "https://popshift.net/memory"
         },
         {
             "title": "Classic Arcade",
@@ -173,7 +174,8 @@ const projects = {
             "images": [
                 "images/projects/arcade.jpg",
                 "images/projects/arcade.gif"
-            ]
+            ],
+            "demo": "https://popshift.net/arcade"
         }
     ],
     "display": function() {
@@ -181,6 +183,7 @@ const projects = {
             $("#projects").append(HTMLprojectStart);
 
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+            formattedTitle = formattedTitle.replace("#", projects.projects[i].demo);
             var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
 
