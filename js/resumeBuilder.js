@@ -18,13 +18,13 @@ const bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
         // iterate bio.contacts object and append to contacts list
-        for(var property in bio.contacts) {
-            if(window['HTML' + property]) {
-                var formattedProperty = window['HTML' + property].replace("%data%", bio.contacts[property]);
+        Object.keys(bio.contacts).forEach(function (key) {
+            if(window['HTML' + key]) {
+                var formattedProperty = window['HTML' + key].replace("%data%", bio.contacts[key]);
                 $("#topContacts").append(formattedProperty);
                 $("#footerContacts").append(formattedProperty);
             }
-        }
+        });
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
         var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -70,7 +70,7 @@ const work = {
         }
     ],
     "display": function() {
-        for(var i = 0; i < work.jobs.length; i++) {
+        for(let i = 0; i < work.jobs.length; i++) {
             $('#workExperience').append(HTMLworkStart);
 
             if(i != 0) {
@@ -112,7 +112,7 @@ const education = {
         }
     ],
     "display": function() {
-        for(var i = 0; i < education.schools.length; i++) {
+        for(let i = 0; i < education.schools.length; i++) {
             $('#education').append(HTMLschoolStart);
     
             var formattedName = HTMLschoolName.replace("%data%", education.schools[i].name);
@@ -125,7 +125,7 @@ const education = {
             $('.education-entry:last').append(formattedLocation);
 
             // iterate schools.majors array and append to school entry
-            for(var x = 0; x < education.schools[i].majors.length; x++) {
+            for(let x = 0; x < education.schools[i].majors.length; x++) {
                 var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[x]);
 
                 $(".education-entry:last").append(formattedMajor);
@@ -136,7 +136,7 @@ const education = {
             // Add Online Classes header
             $('#education').append(HTMLonlineClasses);
 
-            for(var i = 0; i < education.onlineCourses.length; i++) {
+            for(let i = 0; i < education.onlineCourses.length; i++) {
                 $('#education').append(HTMLschoolStart);
         
                 var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
@@ -179,7 +179,7 @@ const projects = {
         }
     ],
     "display": function() {
-        for(var i = 0; i < projects.projects.length; i++) {
+        for(let i = 0; i < projects.projects.length; i++) {
             $("#projects").append(HTMLprojectStart);
 
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
@@ -192,7 +192,7 @@ const projects = {
             $(".project-entry:last").append(formattedDescription);
 
             // iterate projects.images array and append to project list
-            for(var x = 0; x < projects.projects[i].images.length; x++) {
+            for(let x = 0; x < projects.projects[i].images.length; x++) {
                 var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[x]);
 
                 $(".project-entry:last").append(formattedImage);
